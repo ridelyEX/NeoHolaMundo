@@ -4,6 +4,7 @@
     {
         string opc;
         int personas = 0;
+        Console.WriteLine("hola");
 
         do
         {
