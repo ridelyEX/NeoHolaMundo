@@ -1,11 +1,30 @@
-﻿internal class Program
+﻿using NeoHolaMundo.utils;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
+        bool continuar;
+        int personas = 0;
+        do
+        {
+            string nombre = Funciones.nombre();
+            int edad = Funciones.edad();
+            bool mayor = Funciones.mayorDeEdad(edad);
+            Funciones.acceso(nombre, edad, mayor);
+            if (mayor == true)
+                personas++;
+            Console.WriteLine($"Personas autorizadas: {personas}");
+                continuar = Funciones.continuar();
+            if (continuar == false)
+                Console.WriteLine("Ejecución terminada. Hasta pronto");
+        } while (continuar == true);
+    }
+}
+
+        /*
         string opc;
         int personas = 0;
-        Console.WriteLine("hola");
-        Console.WriteLine("hola");
 
         do
         {
@@ -49,5 +68,4 @@
         } while ( opc == "si" );
 
         Console.Write("Ejecución terminada. Hasta pronto");
-    }
-}
+        */
